@@ -29,7 +29,6 @@ mostrarLista(mascotas, borrarMascota);
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
-
   const nombre = document.getElementById("nombreM").value;
   const tipo = document.getElementById("TipoM").value;
   const edad = document.getElementById("edad").value;
