@@ -4,30 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/style.css">
-    <title>Proyecto 03</title>
+    <title>VETERINARIA</title>
 </head>
 <body>
     <div>
         <div>
-            <form action="datos.php"method="registro" id="formulario">
+            <form metrod="registro" id="formulario">
                 <label for="nombreM">Nombre de Mascota</label>
-                <input type="text" name="Nombre de Mascota" id="nombre">
-                <br>
+                <input type="text" name="Nombre de Mascota" id="nombreM"><br>
                 <label for="tipoM">Tipo de Mascota</label>
-                <select name="Tipo de Mascota" id="tipo">
+                <select name="Tipo de Mascota" id="TipoM">
                     <option value="perro">Perro</option>
                     <option value="gato">Gato</option>
                     <option value="pajaro">Pajaro</option>
                     <option value="conejo">Conejo</option>
                     <option value="otro">Otro</option>
-                </select>
-                <br>
+                </select><br>
                 <label for="edad">Edad en Años</label>
-                <input type="number" name="Edad-Años" id="edad">
-                <br>
+                <input type="number" name="Edad-Años" id="edad"><br>
                 <label for="nombreD">Nombre del Dueño</label>
-                <input type="text" name="Nombre del Dueño" id="dueño">
-                <br>
+                <input type="text" name="Nombre del Dueño" id="nombreD"><br>
                 <h3>¿Está vacunada?</h3>
                 <input type="radio" name="Vacuna" value="Si">Si
                 <input type="radio" name="Vacuna" value="No">No
@@ -37,6 +33,9 @@
             <ul id="lista"></ul>
         </div>
     </div>
+    <h2>Mascotas Registradas</h2>
+    <div id="listaMascotas"></div>
+    <div id="resumen"></div>
     <script type="module" src="/public/src/index.js"></script>
 </body>
 </html>
