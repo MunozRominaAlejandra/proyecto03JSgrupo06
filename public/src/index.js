@@ -1,5 +1,17 @@
+
+import { contarMascotas } from "./componentes/conteo.js" ;
 import {mascotas, anotarMascota} from "./componentes/mascotas.js";
+const resumenDiv = document.getElementById("resumen");
 const formulario = document.getElementById("formulario");
+
+function mostrarContador() {
+  const conteo = contarMascotas(mascotas);
+  resumenDiv.innerHTML = `
+    <p>Total de mascotas: <b>${conteo.total}</b></p>
+    <p>Vacunadas: <b>${conteo.vacunadas}</b></p>
+    <p>No vacunadas: <b>${conteo.noVacunadas}</b></p>
+  `;
+}
 
 //Almacenar el registro de cada Mascota
 formulario.addEventListener("submit", function(e) {
@@ -15,5 +27,6 @@ formulario.addEventListener("submit", function(e) {
     mascotas.push(mascota);
 
     console.log(mascotas);
+    mostrarContador();
     formulario.reset();
 });
