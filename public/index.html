@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,10 @@
     <title>VETERINARIA</title>
 </head>
 <body>
-    <div>
+
+    <div id="contenedor">
+        <h1 id="titulo">Registro de Mascotas</h1>
+        <p id="descripcion">registra las mascotas de tus clientes y lleva un control de su estado de vacunacion</p>
         <div>
             <form metrod="registro" id="formulario">
                 <label for="nombreM">Nombre de Mascota</label>
@@ -25,17 +28,19 @@
                 <label for="nombreD">Nombre del Dueño</label>
                 <input type="text" name="Nombre del Dueño" id="nombreD"><br>
                 <h3>¿Está vacunada?</h3>
-                <input type="radio" name="Vacuna" value="Si">Si
-                <input type="radio" name="Vacuna" value="No">No
+                <input type="radio" name="Vacuna" id="vacuna" value="Si">Si
+                <input type="radio" name="Vacuna" id="vacuna" value="No">No
                 <br>
                 <button type="submit">Registrar Mascota</button>
             </form>
             <ul id="lista"></ul>
         </div>
     </div>
+    <div id="contenedor2">
     <h2>Mascotas Registradas</h2>
     <div id="listaMascotas"></div>
     <div id="resumen"></div>
+    </div>
     <script type="module" src="/public/src/index.js"></script>
 </body>
 </html>
