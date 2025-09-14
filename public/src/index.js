@@ -1,6 +1,7 @@
+import { mostrarLista } from "./componentes/lista.js";
+import { contarMascotas } from "./componentes/conteo.js";
+import { mascotas, anotarMascota } from "./componentes/mascotas.js";
 
-import { contarMascotas } from "./componentes/conteo.js" ;
-import {mascotas, anotarMascota} from "./componentes/mascotas.js";
 const resumenDiv = document.getElementById("resumen");
 const formulario = document.getElementById("formulario");
 
@@ -13,20 +14,31 @@ function mostrarContador() {
   `;
 }
 
-//Almacenar el registro de cada Mascota
-formulario.addEventListener("submit", function(e) {
-
-    e.preventDefault();
-    const nombre = document.getElementById("nombreM").value;
-    const tipo = document.getElementById("TipoM").value;
-    const edad = document.getElementById("edad").value;
-    const dueño = document.getElementById("nombreD").value;
-    const vacuna = document.querySelector("input[name='Vacuna']:checked").value;
-
-    const mascota=anotarMascota(nombre, tipo, edad, dueño, vacuna);
-    mascotas.push(mascota);
-
-    console.log(mascotas);
+function borrarMascota(id) {
+  const index = mascotas.findIndex((m) => m.id === id);
+  if (index !== -1) {
+    mascotas.splice(index, 1);
+    mostrarLista(mascotas, borrarMascota);
     mostrarContador();
-    formulario.reset();
+  }
+}
+
+// Inicializar
+mostrarContador();
+mostrarLista(mascotas, borrarMascota);
+
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nombre = document.getElementById("nombreM").value;
+  const tipo = document.getElementById("TipoM").value;
+  const edad = document.getElementById("edad").value;
+  const dueño = document.getElementById("nombreD").value;
+  const vacuna = document.querySelector("input[name='Vacuna']:checked").value;
+
+  const mascota = anotarMascota(nombre, tipo, edad, dueño, vacuna);
+  mascotas.push(mascota);
+
+  formulario.reset();
+  mostrarLista(mascotas, borrarMascota);
+  mostrarContador();
 });
