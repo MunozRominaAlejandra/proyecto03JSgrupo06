@@ -1,3 +1,4 @@
+
 import { contarMascotas } from "./componentes/conteo.js" ;
 import {mascotas, anotarMascota} from "./componentes/mascotas.js";
 const resumenDiv = document.getElementById("resumen");
@@ -11,15 +12,15 @@ function mostrarContador() {
     <p>No vacunadas: <b>${conteo.noVacunadas}</b></p>
   `;
 }
-mostrarContador();
 
+//Almacenar el registro de cada Mascota
 formulario.addEventListener("submit", function(e) {
 
     e.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const tipo = document.getElementById("tipo").value;
+    const nombre = document.getElementById("nombreM").value;
+    const tipo = document.getElementById("TipoM").value;
     const edad = document.getElementById("edad").value;
-    const dueño = document.getElementById("dueño").value;
+    const dueño = document.getElementById("nombreD").value;
     const vacuna = document.querySelector("input[name='Vacuna']:checked").value;
 
     const mascota=anotarMascota(nombre, tipo, edad, dueño, vacuna);

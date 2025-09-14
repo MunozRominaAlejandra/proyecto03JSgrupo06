@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/style.css">
-    <title>Proyecto 03</title>
+    <title>VETERINARIA</title>
 </head>
 <body>
-    
     <div>
         <div>
-            <form action="datos.php"metrod="registro">
+            <form metrod="registro" id="formulario">
                 <label for="nombreM">Nombre de Mascota</label>
-                <input type="text" name="Nombre de Mascota" id="nombreM">
-                <br>
+                <input type="text" name="Nombre de Mascota" id="nombreM"><br>
                 <label for="tipoM">Tipo de Mascota</label>
                 <select name="Tipo de Mascota" id="TipoM">
                     <option value="perro">Perro</option>
@@ -21,17 +19,14 @@
                     <option value="pajaro">Pajaro</option>
                     <option value="conejo">Conejo</option>
                     <option value="otro">Otro</option>
-                </select>
-                <br>
+                </select><br>
                 <label for="edad">Edad en Años</label>
-                <input type="number" name="Edad-Años" id="edad">
-                <br>
+                <input type="number" name="Edad-Años" id="edad"><br>
                 <label for="nombreD">Nombre del Dueño</label>
-                <input type="text" name="Nombre del Dueño" id="nombreD">
-                <br>
+                <input type="text" name="Nombre del Dueño" id="nombreD"><br>
                 <h3>¿Está vacunada?</h3>
-                <input type="radio" name="Vacuna" id="vacuna" value="Si">Si
-                <input type="radio" name="Vacuna" id="vacuna" value="No">No
+                <input type="radio" name="Vacuna" value="Si">Si
+                <input type="radio" name="Vacuna" value="No">No
                 <br>
                 <button type="submit">Registrar Mascota</button>
             </form>
@@ -42,6 +37,5 @@
     <div id="listaMascotas"></div>
     <div id="resumen"></div>
     <script type="module" src="/public/src/index.js"></script>
-    <script type="module" scr="main.js"></script>
 </body>
 </html>
