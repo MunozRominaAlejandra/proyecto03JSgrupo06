@@ -1,6 +1,6 @@
-import { mostrarLista } from "./componentes/lista.js";
-import { contarMascotas } from "./componentes/conteo.js";
-import { mascotas, anotarMascota } from "./componentes/mascotas.js";
+import { mostrarLista } from "../src/componentes/lista.js";
+import { contarMascotas } from "../src/componentes/conteo.js";
+import { mascotas, anotarMascota } from "../src/componentes/mascotas.js";
 
 const resumenDiv = document.getElementById("resumen");
 const formulario = document.getElementById("formulario");
